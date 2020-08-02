@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.login-component {
+  font-family: 'Roboto', sans-serif;
+  min-width: 500px;
+  width: 70%;
+  border-radius: 3%;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+
+  .login-header {
+    white-space: nowrap;
+    text-align: center;
+    height: 45px;
+
+    h1 {
+      font-weight: bold;
+      color: black;
+    }
+  }
+
+  .login-sign-in-divider {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    color: #808080e0;
+
+    &::before {
+      content: "";
+      width: 210px;
+      border-bottom: solid 1px #808080e0;
+      position: absolute;
+      right: 70%;
+      top: 50%;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      width: 210px;
+      border-bottom: solid 1px #808080e0;
+      position: absolute;
+      left: 70%;
+      top: 50%;
+      z-index: 1;
+      margin-right: 10px;
+    }
+  }
+
+  button:focus {
+    outline: none !important;
+  }
+
+  .social-login {
+    fa-icon {
+      margin-right: 7px;
+    }
+
+    div {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .btn-login-google {
+      color: white;
+      background-color: #ea4335;
+    }
+  }
+}
