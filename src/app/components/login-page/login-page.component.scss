@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-.login-component {
+.auth-component {
   font-family: 'Roboto', sans-serif;
   min-width: 500px;
   width: 70%;
@@ -9,7 +9,7 @@
   backdrop-filter: blur(10px);
   padding: 40px;
 
-  .login-header {
+  .auth-header {
     white-space: nowrap;
     text-align: center;
     height: 45px;
@@ -20,7 +20,7 @@
     }
   }
 
-  .login-sign-in-divider {
+  .page-divider {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@
       width: 210px;
       border-bottom: solid 1px #808080e0;
       position: absolute;
-      right: 70%;
+      right: 75%;
       top: 50%;
       z-index: 1;
     }
@@ -44,7 +44,7 @@
       width: 210px;
       border-bottom: solid 1px #808080e0;
       position: absolute;
-      left: 70%;
+      left: 75%;
       top: 50%;
       z-index: 1;
       margin-right: 10px;
@@ -55,19 +55,17 @@
     outline: none !important;
   }
 
-  .social-login {
-    fa-icon {
-      margin-right: 7px;
-    }
+  .tc-checkbox-label {
+    margin-top: 2.4px;
+    margin-left: 4px;
+  }
 
-    div {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
+  .tc-anchor {
+    color: #1DA1F2;
+    cursor: pointer;
 
-    .btn-login-google {
-      color: white;
-      background-color: #ea4335;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

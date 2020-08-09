@@ -1,50 +1,83 @@
-<div class="login-component">
-  <div class="login-header">
+<div class="auth-component">
+  <div class="auth-header">
     <h1>Welcome</h1>
   </div>
-  <span class="login-sign-in-divider">or Login with your email and password</span>
-  <div class="login-form">
-    <section>
-      <!-- Email input element --->
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required type="email">
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-      <!-- Password input element -->
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-    </section>
-    <section class="example-section">
-      <mat-checkbox class="example-margin" [(ngModel)]="rememberPassoword">Remember Password</mat-checkbox>
-    </section>
-    <hr>
-    <section>
-      <button class="w-100" mat-raised-button color="primary">Login</button>
-    </section>
-    <hr>
-    <section class="social-login">
-      <div>
-        <button class="btn-login-google w-100" mat-raised-button><fa-icon [icon]="faGoogle"></fa-icon> Login with Google</button>
+  <span class="page-divider">Login or Sign up with your email and password</span>
+  <mat-tab-group mat-align-tabs="center" class="h-100">
+    <mat-tab label="Login" class="h-100">
+      <div class="auth-form mt-5">
+        <section>
+          <!-- Email input element --->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="loginEmail" required type="email">
+            <mat-error *ngIf="loginEmail.invalid">{{getLoginEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <!-- Password input element -->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required [formControl]="loginPassword">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="loginPassword.invalid">{{getLoginPasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </section>
+        <section class="mt-2">
+          <mat-checkbox class="example-margin" [(ngModel)]="rememberPassword">Remember Password</mat-checkbox>
+        </section>
+        <hr>
+        <social-auth-buttons name="Login"></social-auth-buttons>
       </div>
-      <div>
-        <button class="btn-login-twitter w-100" mat-raised-button>Login with Twitter</button>
+    </mat-tab>
+    <mat-tab label="Sign Up" class="h-100">
+      <div class="auth-form mt-5">
+        <section>
+          <!-- Email input element --->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="signupEmail" required type="email">
+            <mat-error *ngIf="signupEmail.invalid">{{getSignupEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <!-- Password input element -->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required [formControl]="signupPassword">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="signupPassword.invalid">{{getSignupPasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <!-- Password input element -->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Confim your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="rehide = !rehide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide" [formControl]="reSignupPassword">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="reSignupPassword.invalid">{{getSignupRePasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <!-- DOB Date picker -->
+          <mat-form-field color="accent" appearance="fill" class="w-100">
+            <mat-label>Your Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker1" (click)="picker1.open()" readonly required
+                   [formControl]="signupDatepickerDob">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" touchUi #picker1 color="primary" class="w-100"></mat-datepicker>
+            <mat-error *ngIf="signupDatepickerDob.invalid">{{getSignupDatepickerDobErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </section>
+        <section class="row m-0 mt-2">
+          <mat-checkbox class="example-margin" [(ngModel)]="tc" required>Confirm</mat-checkbox>
+          <div class="tc-checkbox-label"><span class="tc-anchor"
+                                               (click)="openTCDialog()">&nbsp;Terms & Conditions </span></div>
+        </section>
+        <hr>
+        <social-auth-buttons name="Sign Up"></social-auth-buttons>
       </div>
-      <div>
-        <button class="btn-login-github w-100" mat-raised-button>Login with GitHub</button>
-      </div>
-      <div>
-        <button class="btn-login-linkedIn w-100" mat-raised-button>Login with LinkedIn</button>
-      </div>
-      <div>
-        <button class="btn-login-instagram w-100" mat-raised-button>Login with Instagram</button>
-      </div>
-    </section>
-  </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
