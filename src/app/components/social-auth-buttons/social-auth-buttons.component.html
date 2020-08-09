@@ -1,0 +1,56 @@
+<section>
+  <button class="w-100 mat-elevation-z4"
+          (mouseover)="changeHover($event)"
+          (mouseleave)="changeHover($event)"
+          mat-raised-button
+          color="primary">{{name}}
+  </button>
+</section>
+<hr>
+<section class="social-login">
+  <div>
+    <button class="btn-social btn-login-google w-100"
+            (mouseover)="changeHover($event)"
+            (mouseleave)="changeHover($event)"
+            mat-raised-button>
+      <fa-icon [icon]="faGoogle"></fa-icon>
+      {{name}} with Google
+    </button>
+  </div>
+  <div>
+    <button class="btn-social btn-login-twitter w-100"
+            (mouseover)="changeHover($event)"
+            (mouseleave)="changeHover($event)"
+            mat-raised-button>
+      <fa-icon [icon]="faTwitter"></fa-icon>
+      {{name}} with Twitter
+    </button>
+  </div>
+  <div>
+    <button class="btn-social btn-login-github w-100"
+            (mouseover)="changeHover($event)"
+            (mouseleave)="changeHover($event)"
+            mat-raised-button>
+      <fa-icon [icon]="faGithub"></fa-icon>
+      {{name}} with GitHub
+    </button>
+  </div>
+  <div>
+    <button class="btn-social btn-login-linkedIn w-100"
+            (mouseover)="changeHover($event)"
+            (mouseleave)="changeHover($event)"
+            mat-raised-button>
+      <fa-icon [icon]="faLinkedIn"></fa-icon>
+      {{name}} with LinkedIn
+    </button>
+  </div>
+  <div>
+    <button class="btn-social btn-login-instagram w-100"
+            (mouseover)="changeHover($event)"
+            (mouseleave)="changeHover($event)"
+            mat-raised-button>
+      <fa-icon [icon]="faInstagram"></fa-icon>
+      {{name}} with Instagram
+    </button>
+  </div>
+</section>

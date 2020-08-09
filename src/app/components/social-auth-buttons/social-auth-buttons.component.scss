@@ -1,0 +1,41 @@
+.social-login {
+  fa-icon {
+    margin-right: 7px;
+  }
+
+  div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .btn-social {
+    color: white;
+  }
+
+  .btn-login-google {
+    background-color: #ea4335;
+  }
+
+  .btn-login-twitter {
+    background-color: #1DA1F2;
+  }
+
+  .btn-login-github {
+    background-color: #181818;;
+  }
+
+  .btn-login-linkedIn {
+    background-color: #3c839f;
+  }
+
+  .btn-login-instagram {
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+}
+
+button:focus {
+  outline: none !important;
+}
