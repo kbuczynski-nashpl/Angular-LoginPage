@@ -33,8 +33,11 @@ export class SocialAuthButtonsComponent implements OnInit {
   changeHover(event): void {
     this.hover    = event.type == 'mouseover';
     const element = event.target;
+    const skipElements = ['path', 'svg', 'FA-ICON'];
 
-    if (element.classList.contains('mat-button-wrapper')) {
+    console.info(element.tagName);
+
+    if (element.classList.contains('mat-button-wrapper') || skipElements.includes(element.tagName)) {
       return;
     }
 
