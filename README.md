@@ -1,8 +1,6 @@
 # Login/Signup Page Angular
 A simple Login/Signup component made in Angular.
 
-[Demo](https://kbucz.com/Angular-LoginPage/)
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
